@@ -5,17 +5,20 @@ import MainContent from '../components/MainContent'
 import ArticleInteractor from '../../domain/interactor/ArticleInteractor'
 import Article from '../../domain/model/Article'
 import ArticleRepository from '../../domain/repository/ArticleRepository'
+import Loading from '../components/Loading'
 
 const ArticlesListView: React.FC = () => {
+
     const interactor: ArticleInteractor = new ArticleInteractor(new ArticleRepository())
-    const [loading, setLoading] = useState<boolean>(false)
+
+    const [loading, setLoading] = useState<boolean>(true)
+
     const [articles, setArticles] = useState<Article[]>([])
 
     useEffect(() => {
         const fetchHeadline = async () => {
-            setLoading(!loading)
             const fetchedData = await interactor.getHeadline()
-            setLoading(!loading)
+            setLoading(false)
             setArticles(fetchedData ?? [])
         }
 
@@ -27,7 +30,9 @@ const ArticlesListView: React.FC = () => {
     return (
         <Layout>
             <Navbar />
-            <MainContent type='List' data={articles} title='Headline News' />
+            {
+                loading ? <Loading /> : <MainContent type='List' data={articles} title='Headline News' />
+            }
         </Layout>
     )
 }

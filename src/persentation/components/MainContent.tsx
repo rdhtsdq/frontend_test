@@ -13,7 +13,7 @@ interface IMainContentProps {
 
 const contentStyle: React.CSSProperties = {
     minHeight: '90vh',
-    padding: '15px 30px'
+    padding: '15px 30px',
 }
 
 const titleStyle: React.CSSProperties = {
@@ -31,7 +31,6 @@ const MainContent: React.FC<IMainContentProps> = ({ type = 'Detail', data = [], 
                     </h1>
                 )
             }
-
             {type === 'List' && data && Array.isArray(data) && (
                 data.map((art: Article, index: number) => (
                     <ArticleCard key={index} title={art.title} author={art.author} content={art.content} description={art.description} publishedAt={art.publishedAt} />

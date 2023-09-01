@@ -1,5 +1,4 @@
 import { Card } from "antd";
-import Article from "../../domain/model/Article";
 import React from "react";
 
 const cardTitleStyle: React.CSSProperties = {
@@ -14,12 +13,20 @@ const cardDesc: React.CSSProperties = {
 const cardTextWrapper: React.CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
+    cursor: 'pointer'
+}
+
+interface ICardProps {
+    onClick?: () => void | null
+    title?: String | null
+    author?: String | null
 }
 
 
-const ArticleCard: React.FC<Article> = (props) => {
+const ArticleCard: React.FC<ICardProps> = (props) => {
     return (
         <Card
+            onClick={props.onClick}
             type="inner"
             style={{ marginBottom: "20px", }}>
             <div style={cardTextWrapper}>

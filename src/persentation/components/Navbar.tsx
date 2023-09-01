@@ -1,22 +1,26 @@
 import { Header } from "antd/es/layout/layout"
 import React from "react"
 interface INavbarProps {
-    title?: String
+    title?: String,
+    style?: React.CSSProperties
+
 }
 
 const NavbarStyle: React.CSSProperties = {
     backgroundColor: 'red',
-    color: 'white'
+    color: 'white',
+    position: 'sticky',
+    top: "0",
+    width: "100%",
 }
 
 const titleStyle: React.CSSProperties = {
-    // fontSize: '20px',
     fontWeight: 'bold'
 }
 
 const Navbar = (props: INavbarProps) => {
     return (
-        <Header style={NavbarStyle}>
+        <Header style={{ ...NavbarStyle, ...props.style }}>
             <h2 style={titleStyle}>
                 {props.title ?? "Articles"}
             </h2>

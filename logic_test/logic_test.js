@@ -34,7 +34,6 @@ const getLongest = (sentences) => {
     let longestWord = ''
 
     for (const w in word) {
-        console.log(w)
         if (word[w].length > longestWord.length) {
             longestWord = word[w]
         }

@@ -1,9 +1,10 @@
-import { Content } from "antd/es/layout/layout"
+// import { Content } from "antd/es/layout/layout"
+import { Layout } from "antd"
 import React from "react"
 
 interface IMainContentProps {
     children: React.ReactNode | React.ReactNode[]
-    title: String,
+    title?: String,
 }
 
 
@@ -23,7 +24,7 @@ const titleStyle: React.CSSProperties = {
 const MainContent: React.FC<IMainContentProps> = ({ children, title = null }) => {
 
     return (
-        <Content style={contentStyle}>
+        <Layout.Content style={contentStyle}>
 
             {/* type is list */}
             {
@@ -35,7 +36,7 @@ const MainContent: React.FC<IMainContentProps> = ({ children, title = null }) =>
             }
 
             {children}
-        </Content>
+        </Layout.Content>
     )
 }
 

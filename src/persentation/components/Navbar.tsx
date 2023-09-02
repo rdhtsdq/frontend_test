@@ -1,4 +1,5 @@
-import { Header } from "antd/es/layout/layout"
+// import { Header } from "antd/es/layout/layout"
+import { Layout } from "antd"
 import React from "react"
 interface INavbarProps {
     title?: String,
@@ -20,11 +21,11 @@ const titleStyle: React.CSSProperties = {
 
 const Navbar = (props: INavbarProps) => {
     return (
-        <Header style={{ ...NavbarStyle, ...props.style }}>
+        <Layout.Header style={{ ...NavbarStyle, ...props.style }} data-testid="nav-test-id">
             <h2 style={titleStyle}>
                 {props.title ?? "Articles"}
             </h2>
-        </Header>
+        </Layout.Header>
     )
 }
 

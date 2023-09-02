@@ -20,12 +20,15 @@ interface ICardProps {
     onClick?: () => void | null
     title?: String | null
     author?: String | null
+    id?: String
 }
 
 
 const ArticleCard: React.FC<ICardProps> = (props) => {
     return (
         <Card
+            data-testid="article-card"
+            id={props.id?.toString()}
             onClick={props.onClick}
             type="inner"
             style={{ marginBottom: "20px", }}>

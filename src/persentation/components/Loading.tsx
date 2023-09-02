@@ -1,5 +1,4 @@
-import { Spin } from "antd"
-import { Content } from "antd/es/layout/layout"
+import { Spin, Layout } from "antd"
 import React from "react"
 
 const loadingStyle: React.CSSProperties = {
@@ -12,9 +11,9 @@ const loadingStyle: React.CSSProperties = {
 
 const Loading: React.FC = () => {
     return (
-        <Content style={loadingStyle}>
-            <Spin />
-        </Content>
+        <Layout.Content style={loadingStyle} >
+            <Spin data-testid="loading" />
+        </Layout.Content>
     )
 }
 

@@ -11,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/antd": "^1.0.0",
     "antd": "^5.8.5",
     "axios": "^1.5.0",
     "jest-environment-jsdom": "^29.6.4",

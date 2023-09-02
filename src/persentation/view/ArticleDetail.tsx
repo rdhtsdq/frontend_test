@@ -37,8 +37,11 @@ const contentStyle: React.CSSProperties = {
     maxWidth: '60vw'
 }
 
+interface IArticleDetailProps {
+    data?: Article
+}
 
-const ArticleDetail: React.FC = () => {
+const ArticleDetail: React.FC<IArticleDetailProps> = (props) => {
     const [article, setArticle] = useState<Article>({})
     const { state } = useLocation()
 
@@ -46,12 +49,16 @@ const ArticleDetail: React.FC = () => {
         if (state.article) {
             setArticle(state.article)
         }
+
+        if (props.data) {
+            setArticle(props.data)
+        }
     }, [])
 
     return (
         <Layout>
             <Navbar style={{ position: 'fixed', width: '100%', zIndex: '1' }} />
-            <MainContent title={article.title ?? ''} >
+            <MainContent title={article.title ?? 'Untitled'} >
                 {/* {JSON.stringify(article)} */}
                 <div style={baseStyle}>
                     <div style={contentWrapper}>

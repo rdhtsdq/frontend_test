@@ -21,6 +21,8 @@ const reverse = (str) => {
 
 console.log(reverse('NEGIE1'))
 
+
+
 // Longest Sentences
 
 /**
@@ -43,11 +45,12 @@ const getLongest = (sentences) => {
 const sentence = "Saya sangat senang mengerjakan soal algoritma";
 console.log(getLongest(sentence));
 
+
+
 // get num of sentences in array
 
-
-let INPUT = ['xc', 'dz', 'bbb', 'dz']
-let QUERY = ['bbb', 'ac', 'dz']
+let input = ['xc', 'dz', 'bbb', 'dz']
+let query = ['bbb', 'ac', 'dz']
 
 /**
  * 
@@ -72,8 +75,10 @@ const getNumContent = (input, search) => {
     return result
 }
 
-console.log(getNumContent(INPUT, QUERY)
+console.log(getNumContent(input, query)
 )
+
+// get matrix result
 
 const matrix = [[1, 2, 0, 3], [4, 5, 6, 9], [7, 8, 9, 7]]
 
